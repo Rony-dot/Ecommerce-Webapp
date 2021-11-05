@@ -26,6 +26,13 @@ export class ProductService {
       map(response => response._embedded.productCategory)
     );
   }
+
+  getProductsByCategoryName(keyword: string) {
+    const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${keyword}`;
+    return this.httpClient.get<GetResponseProducts>(searchUrl).pipe(
+      map(response => response._embedded.products)
+    );
+  }
 }
 
 interface GetResponseProducts{

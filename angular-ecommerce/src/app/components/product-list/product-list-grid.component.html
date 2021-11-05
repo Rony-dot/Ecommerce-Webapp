@@ -12,6 +12,9 @@
             <a href="#" class="primary-btn">Add to Cart</a>
           </div>
         </div>
+        <div *ngIf="products?.length == 0" class="alert alert-danger col-md-12" role="alert">
+          No products found.
+        </div>
       </div>
     </div>
   </div>
