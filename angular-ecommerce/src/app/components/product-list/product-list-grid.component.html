@@ -18,6 +18,36 @@
           No products found.
         </div>
       </div>
+
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-4 "></div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-8" style="padding-left: 0%">
+                <ngb-pagination [(page)]="thePageNumber"
+                [pageSize]="thePageSize"
+                [collectionSize]="theTotalElements"
+                                [maxSize]="5"
+                                [boundaryLinks]="true"
+                (pageChange)="getAllProducts()">
+
+                </ngb-pagination>
+              </div>
+              <div class="col-md-4 mt-2 " style="text-align: right">
+                <span class="mr-2">Page size</span>
+                <select (change)="updatePageSize($event)" class="" >
+                  <option selected="true">5</option>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
